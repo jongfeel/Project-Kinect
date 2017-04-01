@@ -1,0 +1,37 @@
+﻿<Window x:Class="Kinect.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Closing="WindowClosing"
+        Title="Project K" Width="600" Height="520">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="480*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!--Grid.Row 0-->
+        <Menu Grid.Row="0">
+            <MenuItem Header="해상도">
+                <MenuItem Header="1280x960 12프레임" Height="20" Click="HighResolutionClick"/>
+                <MenuItem Header="640x480 30프레임" Height="20" Click="LowResolutionClick"/>
+            </MenuItem>
+            <MenuItem Header="스켈레톤 모드">
+                <MenuItem Header="상반신 캡처" Height="20" x:Name="SeatMode" Click="SeatMode_Click"/>
+                <MenuItem Header="전신 캡처" Height="20" x:Name="StandMode" IsChecked="True" Click="StandMode_Click" />
+            </MenuItem>
+            <MenuItem Header="스크린 샷" Click="ButtonScreenshotClick"></MenuItem>
+        </Menu>
+
+        <!--Grid.Row 1-->
+        <Image Grid.Row="1" Name="ColorLayer" Stretch="Uniform"/>
+        <Image Grid.Row="1" Name="SkeletonLayer" Stretch="Uniform"/>
+        <MediaElement Grid.Row="1" Name="LoadingLayer" Stretch="None" Visibility="Hidden"
+                      LoadedBehavior = "Manual" Source="./Image/Loading_icon5.gif"/>
+
+        <!--Grid.Row 2-->
+        <StatusBar Height="20" Grid.Row="2" Background="Black" Foreground="White">
+            <TextBlock Name="statusBarText" Margin="3,0,0,0" Text="자동으로 키넥트를 찾는 중입니다."/>
+        </StatusBar>
+    </Grid>
+</Window>
