@@ -88,6 +88,15 @@ namespace Kinect.Properties {
         }
         
         /// <summary>
+        ///   [키넥트 없음] 연결된 키넥트가 없습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string NoKinect {
+            get {
+                return ResourceManager.GetString("NoKinect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   [키넥트 인식 장애] 다시 준비중입니다... 5초내로 변화가 없으면 키넥트 USB를 다시 연결하여 주십시오.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string ReconnectRequired {

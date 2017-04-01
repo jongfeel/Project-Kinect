@@ -24,12 +24,18 @@
             // 플러그 앤 플러그에 대해 앱을 강력하게 만들려면,
             // Microsoft.Kinect.Toolkit에 제공된 KinectmSensorChooser를 사용하는 것이 좋습니다 (Toolkit Browser의 구성 요소 참조).
             // 여기서는 내가 타이머로 다르게 구현.. 시간나면 바꿔보던지 해보자.
-            foreach (var potentialmSensor in KinectSensor.KinectSensors){
-                if (potentialmSensor.Status == KinectStatus.Connected){
-                    mSensor = potentialmSensor;
-                    break;
+            try
+            {
+                foreach (var potentialmSensor in KinectSensor.KinectSensors)
+                {
+                    if (potentialmSensor.Status == KinectStatus.Connected)
+                    {
+                        mSensor = potentialmSensor;
+                        break;
+                    }
                 }
             }
+            catch { SafeRelease(); ((MainWindow)Application.Current.MainWindow).statusBarText.Text = Properties.Resources.NoKinect; }
 
             if (null != mSensor){
                 // Start the mSensor!
