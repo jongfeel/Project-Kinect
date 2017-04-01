@@ -35,7 +35,7 @@
                     }
                 }
             }
-            catch { SafeRelease(); ((MainWindow)Application.Current.MainWindow).statusBarText.Text = Properties.Resources.NoKinect; }
+            catch { SafeRelease(); ((MainWindow)Application.Current.MainWindow).statusBarText.Text = Properties.Resources.NoKinectLib; }
 
             if (null != mSensor){
                 // Start the mSensor!

@@ -126,8 +126,8 @@
   <data name="KinectLoading" xml:space="preserve">
     <value>[키넥트 준비중] 송출까지 15초 정도의 시간이 소요될 수 있습니다.</value>
   </data>
-  <data name="NoKinect" xml:space="preserve">
-    <value>[키넥트 없음] 연결된 키넥트가 없습니다.</value>
+  <data name="NoKinectLib" xml:space="preserve">
+    <value>[키넥트] 설치된 라이브러리가 없습니다.</value>
   </data>
   <data name="ReconnectRequired" xml:space="preserve">
     <value>[키넥트 인식 장애] 다시 준비중입니다... 5초내로 변화가 없으면 키넥트 USB를 다시 연결하여 주십시오.</value>

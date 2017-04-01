@@ -88,11 +88,11 @@ namespace Kinect.Properties {
         }
         
         /// <summary>
-        ///   [키넥트 없음] 연결된 키넥트가 없습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   [키넥트] 설치된 라이브러리가 없습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string NoKinect {
+        internal static string NoKinectLib {
             get {
-                return ResourceManager.GetString("NoKinect", resourceCulture);
+                return ResourceManager.GetString("NoKinectLib", resourceCulture);
             }
         }
         

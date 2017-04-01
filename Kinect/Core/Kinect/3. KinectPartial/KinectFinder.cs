@@ -46,7 +46,10 @@
                     }
                 }
             }
-            catch { }
+            catch {
+                ((MainWindow)Application.Current.MainWindow).LoadLoadingGif();
+                ((MainWindow)Application.Current.MainWindow).statusBarText.Text = Properties.Resources.NoKinectLib;
+            }
         }
     }
 }
