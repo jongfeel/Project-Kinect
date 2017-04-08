@@ -80,6 +80,9 @@
     </Page>
     <Compile Include="Core\Kinect\3. KinectPartial\KinectColorInterface.cs" />
     <Compile Include="Core\Kinect\3. KinectPartial\KinectSkeltonInterface.cs" />
+    <Compile Include="Core\MainWindowPartial\MainWindowViewModel.cs" />
+    <Compile Include="Core\MainWindowPartial\PropertyChangedEventBase.cs" />
+    <Compile Include="Core\MainWindowPartial\RelayCommand.cs" />
     <Compile Include="etc\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -87,8 +90,6 @@
     <Compile Include="Core\Kinect\1. Color\KinectColor.cs" />
     <Compile Include="Core\Kinect\Kinect.cs" />
     <Compile Include="Core\Kinect\2. Skeleton\KinectSkeleton.cs" />
-    <None Include="etc\PropertyChangeEventBase.cs" />
-    <None Include="etc\RelayCommand.cs" />
     <Compile Include="Core\Kinect\3. KinectPartial\KinectFinder.cs" />
     <Compile Include="Core\MainWindowPartial\LoadGif.cs" />
     <Compile Include="Core\MainWindowPartial\MenuProcedure.cs" />

@@ -41,7 +41,7 @@
                         catch
                         {
                             Init(((MainWindow)Application.Current.MainWindow).GetResloutionFlag(),
-                                ((MainWindow)Application.Current.MainWindow).StandMode.IsChecked);
+                                true);
                         }
                     }
                 }

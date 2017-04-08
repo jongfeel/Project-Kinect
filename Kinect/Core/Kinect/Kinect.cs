@@ -7,16 +7,30 @@
 
     public partial class CKinect
     {
+        private MainWindow mainWindow;
+        public CKinect(MainWindow mainWindow)
+        {
+            this.mainWindow = mainWindow;
+        }
+
         KinectSensor mSensor = null;
         CKinectColor mColor = null;
         CKinectSkeleton mSkeleton = null;
 
+        public void SetSkeletonTrackingMode(SkeletonTrackingMode mode)
+        {
+            if (mSensor != null)
+            {
+                mSensor.SkeletonStream.TrackingMode = mode;
+            }
+        }
+
         public void Init(bool ResolutionFlag, bool SkeletonMode)
         {
             StopKinectFinding();
-            ((MainWindow)Application.Current.MainWindow).SetResolution(ResolutionFlag);
-            ((MainWindow)Application.Current.MainWindow).statusBarText.Text = Properties.Resources.KinectLoading;
-            ((MainWindow)Application.Current.MainWindow).LoadLoadingGif();
+            mainWindow.SetResolution(ResolutionFlag);
+            mainWindow.statusBarText.Text = Properties.Resources.KinectLoading;
+            mainWindow.LoadLoadingGif();
             SafeRelease();
 
             // 모든 센서를 살펴보고 처음 연결된 센서를 시작하십시오.
@@ -35,7 +49,7 @@
                     }
                 }
             }
-            catch { SafeRelease(); ((MainWindow)Application.Current.MainWindow).statusBarText.Text = Properties.Resources.NoKinectLib; }
+            catch { SafeRelease(); mainWindow.statusBarText.Text = Properties.Resources.NoKinectLib; }
 
             if (null != mSensor){
                 // Start the mSensor!
@@ -47,8 +61,8 @@
             }
 
             if (null != mSensor){
-                ((MainWindow)Application.Current.MainWindow).statusBarText.Text = Properties.Resources.KinectConnected;
-                ((MainWindow)Application.Current.MainWindow).StopGif();
+                mainWindow.statusBarText.Text = Properties.Resources.KinectConnected;
+                mainWindow.StopGif();
             }
             StartKinectFinding();
         }

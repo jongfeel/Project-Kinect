@@ -1,13 +1,10 @@
-﻿namespace Kinect.Helper
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Windows.Input;
-    using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Windows.Input;
 
-    class RelayCommand : ICommand
+namespace Kinect.Core.MainWindowPartial
+{
+    internal class RelayCommand : ICommand
     {
         private Action<object> _action;
 
@@ -24,7 +21,11 @@
             return true;
         }
 
-        public event EventHandler CanExecuteChanged = null;
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
 
         public void Execute(object parameter)
         {

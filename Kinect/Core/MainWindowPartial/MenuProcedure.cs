@@ -6,12 +6,12 @@
     {
         void HighResolutionClick(object sender, RoutedEventArgs e)
         {
-            mKinect.Init(true, StandMode.IsChecked);
+            mKinect.Init(true, true);
         }
 
         void LowResolutionClick(object sender, RoutedEventArgs e)
         {
-            mKinect.Init(false, StandMode.IsChecked);
+            mKinect.Init(false, true);
         }
 
         void ButtonScreenshotClick(object sender, RoutedEventArgs e)
@@ -22,20 +22,6 @@
         void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             mKinect.WindowClosing(sender, e);
-        }
-
-        void SeatMode_Click(object sender, RoutedEventArgs e)
-        {
-            SeatMode.IsChecked = true;
-            StandMode.IsChecked = false;
-            mKinect.SeatModeClick(sender, e);
-        }
-
-        void StandMode_Click(object sender, RoutedEventArgs e)
-        {
-            StandMode.IsChecked = true;
-            SeatMode.IsChecked = false;
-            mKinect.StandModeClick(sender, e);
         }
     }
 }

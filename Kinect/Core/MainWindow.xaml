@@ -17,8 +17,8 @@
                 <MenuItem Header="640x480 30프레임" Height="20" Click="LowResolutionClick"/>
             </MenuItem>
             <MenuItem Header="스켈레톤 모드">
-                <MenuItem Header="상반신 캡처" Height="20" x:Name="SeatMode" Click="SeatMode_Click"/>
-                <MenuItem Header="전신 캡처" Height="20" x:Name="StandMode" IsChecked="True" Click="StandMode_Click" />
+                <MenuItem Header="상반신 캡처" Height="20" IsChecked="{Binding Path=IsSeated}" Command="{Binding Path=SeatCommand}"/>
+                <MenuItem Header="전신 캡처" Height="20" IsChecked="{Binding Path=IsStand}" Command="{Binding Path=StandCommand}"/>
             </MenuItem>
             <MenuItem Header="스크린 샷" Click="ButtonScreenshotClick"></MenuItem>
         </Menu>
