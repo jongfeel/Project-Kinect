@@ -68,5 +68,9 @@ namespace Kinect.Core.MainWindowPartial
                 return seatCommand;
             }
         }
+
+        // Command가 없는 Control의 Binding은 어떻게???
+        // ex) MouseDrop, ListView.SelectionChanged
+        // http://stackoverflow.com/questions/4897775/wpf-binding-ui-events-to-commands-in-viewmodel
     }
 }
